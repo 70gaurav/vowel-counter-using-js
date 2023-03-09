@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <input type="text" placeholder="enter your name" autofocus>
+    <button type="submit">count</button>
+  </form>
+<p></p>
+
+
+  <script>
+    let input = document.querySelector('input')
+    let btn = document.querySelector('button')
+    let para = document.querySelector('p')
+    
+ 
+    btn.onclick = (e) =>{
+      e.preventDefault()
+      obj ={
+      a:0,
+      e:0,
+      i:0,
+      o:0,
+      u:0
+
+    }
+      let name = input.value.toLowerCase()
+     let splt = name.split('')
+     for(let i=0; i<splt.length; i++){
+      if(Object.keys(obj).includes(splt[i])){
+        obj[splt[i]]++
+      }
+     }
+     for(let x in obj){
+        para.innerHTML+= x + ":" + obj[x]+"</br>"
+     }
+    }
+    
+
+  </script>
+</body>
+</html>
